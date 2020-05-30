@@ -1,6 +1,6 @@
 import * as d3 from 'd3';
 
-const data = [1, 3, 5, 7, 9, 2, 4, 6, 8, 10];
+const data = [62, 95, 81, 94, 60, 34, 63, 72, 88, 12, 90, 71, 40, 28, 42, 69];
 
 const width = 800;
 const height = 400;
