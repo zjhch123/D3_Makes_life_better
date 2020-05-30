@@ -4,6 +4,7 @@ const data = [1, 3, 5, 7, 9, 2, 4, 6, 8, 10];
 
 const width = 800;
 const height = 400;
+const color = d3.scaleOrdinal(d3.schemeCategory10);
 
 const leftPadding = 30;
 const rightPadding = 30;
@@ -37,8 +38,8 @@ container.append('g')
     x: (_, index) => ordinal(index) - gap / 2,
     y: height - bottomPadding,
     class: 'path',
+    fill: (_, i) => color(i),
   })
-  .attr('fill', '#973c3f')
   .transition()
   .duration(800)
   .delay((d, i) => i * 100)

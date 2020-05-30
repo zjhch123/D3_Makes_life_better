@@ -1,16 +1,7 @@
 import * as d3 from 'd3';
 import chinaMap from '../data/china.geo.json';
 
-const colors = [
-  '#7fb80e',
-  '#b3424a',
-  '#769149',
-  '#c76968',
-  '#6d8346',
-  '#bb505d',
-  '#78a355',
-  '#987165',
-];
+const color = d3.scaleOrdinal(d3.schemeCategory10);
 
 const width = 800;
 const height = 600;
@@ -46,8 +37,6 @@ d3.select('.container')
     stroke: '#eee',
     d: path,
     class: 'path',
-  })
-  .attr('fill', (_, index) => {
-    return colors[index % colors.length];
+    fill: (_, i) => color(i),
   })
   .style('vector-effect', 'non-scaling-stroke');
